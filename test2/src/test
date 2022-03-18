@@ -1,0 +1,176 @@
+ public static void newRace2() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Add Driver's Name");
+        String dName = input.next();
+        System.out.println("Add the Team");
+        String teamName = input.next();
+        boolean isOrdered;
+        for (int i = 0; i < racersList.size(); i++){
+
+
+            if (racersList.get(i).getDriversName().equalsIgnoreCase(dName)){
+
+
+                System.out.println("Race Position");
+                System.out.println(racersList.get(i).getDriversName());
+
+                int newPos = input.nextInt();
+
+                for (Formula1Driver formula1Driver : racersList) {
+
+                    formula1Driver.updatePoints(newPos);
+                    formula1Driver.updateTotalRaces();
+
+                }
+
+
+            }else {
+                isOrdered = true;
+                break;
+
+
+
+
+
+            }
+
+        }
+        if (isOrdered){
+
+
+            System.out.println("Add Driver's Location");
+            String dLocation = input.next();
+
+            System.out.println("Race Position");
+            int pos = input.nextInt();
+
+            System.out.println("Number of Races Participated");
+            int totRaces = input.nextInt();
+
+            Formula1Driver f1 = new Formula1Driver(dName, teamName, totRaces, pos);
+            f1.setDriversName(dName);
+
+
+            f1.setDriversLocation(dLocation);
+
+            racersList.add(f1);
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+     if (!racersList.isEmpty()) {
+                for (int i = 0; true; i++) {
+                    Scanner input = new Scanner(System.in);
+                    System.out.println("Add Driver's Name");
+                    String dName = input.next();
+                    System.out.println("Add the Team");
+                    String teamName = input.next();
+                    if (racersList.get(i).getDriversName().equalsIgnoreCase(dName)) {
+
+                        System.out.println("Race Position");
+
+
+                        int newPos = input.nextInt();
+
+                        for (Formula1Driver formula1Driver : racersList) {
+
+                            formula1Driver.updatePoints(newPos);
+                            formula1Driver.updateTotalRaces();
+                        }
+                        break;
+                    } else {
+
+                        System.out.println("new driver");
+
+                        System.out.println("Add Driver's Location");
+                        String dLocation = input.next();
+
+                        System.out.println("Race Position");
+                        int pos = input.nextInt();
+
+                        System.out.println("Number of Races Participated");
+                        int totRaces = input.nextInt();
+
+                        Formula1Driver f1 = new Formula1Driver(dName, teamName, totRaces, pos);
+                        f1.setDriversName(dName);
+
+
+                        f1.setDriversLocation(dLocation);
+
+                        racersList.add(f1);
+                        break;
+
+
+                    }
+                }
+
+
+            } else {
+                Scanner input = new Scanner(System.in);
+                System.out.println("Add Driver's Name");
+                String dName = input.next();
+                System.out.println("Add the Team");
+                String teamName = input.next();
+                System.out.println("Add Driver's Location");
+                String dLocation = input.next();
+
+                System.out.println("Race Position");
+                int pos = input.nextInt();
+
+                System.out.println("Number of Races Participated");
+                int totRaces = input.nextInt();
+
+                Formula1Driver f1 = new Formula1Driver(dName, teamName, totRaces, pos);
+                f1.setDriversName(dName);
+
+
+                f1.setDriversLocation(dLocation);
+
+                racersList.add(f1);
+
+            }
+
+
+
+                public String toString() {
+                    return "Formula1Driver {" +
+                            "Drivers Name : '" + getDriversName() + '\t' +
+
+                            ", Drivers Team : '" + driversTeam + '\'' +
+                            ", Drivers Location ='" + getDriversLocation() + '\'' +
+                            ", Total Points : " + getCurrentPoints() +
+                            ", Races Participated : " + racesParticipated +
+                            ", Total FirstPositions : " + firstPositions +
+                            ", Total SecondPositions : " + secondPositions +
+                            ", Total ThirdPositions : " + thirdPositions + "}\n";
+                }
+
+
+        for (Formula1Driver driverTable : sortedList){
+            System.out.format(leftAlignFormat, driverTable.getDriversName(), driverTable.getDriversTeam(),
+                    driverTable.getDriversLocation(),driverTable.getRacesParticipated(), driverTable.getPoints(),
+                    driverTable.getFirstPositions(), driverTable.getSecondPositions(), driverTable.getThirdPositions());
+
+        }
+
+                 " " +
+
+
+                                "            " +
+                                  getDriversName() +  "            " +
+
+                                driversTeam +  "                  " +
+                                getDriversLocation() +   "                      " +
+                                getCurrentPoints() +   "                           " +
+                                racesParticipated +  "                             " +
+                                firstPositions +  "                         " +
+                                secondPositions +  "                        " +
+                                thirdPositions + "}\n";
